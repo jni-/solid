@@ -1,9 +1,5 @@
 package ca.ulaval.glo4002.solid_srp;
 
-import static org.mockito.BDDMockito.*;
-import static org.mockito.Matchers.*;
-import static org.mockito.Mockito.*;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,10 +7,12 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
+import static org.mockito.BDDMockito.*;
+
 @RunWith(MockitoJUnitRunner.class)
 public class MovieTicketServiceTest {
 
-    private static final int ANY_AGE = 12;
+    private static final Integer ANY_AGE = 12;
     private static final boolean IS_STUDENT = true;
 
     @Mock
@@ -31,7 +29,7 @@ public class MovieTicketServiceTest {
 
     @Before
     public void setUp() {
-        willReturn(generatedTicket).given(factory).createTicket(anyInt(), anyBoolean());
+        when(factory.createTicket(anyInt(), anyBoolean())).thenReturn(generatedTicket);
     }
 
     @Test
