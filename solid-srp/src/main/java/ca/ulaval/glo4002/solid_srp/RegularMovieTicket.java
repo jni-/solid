@@ -2,9 +2,9 @@ package ca.ulaval.glo4002.solid_srp;
 
 public class RegularMovieTicket extends MovieTicket {
 
-    private static final float PRICE = 15.0f;
+    private static final Float PRICE = 15.0f;
 
-    public RegularMovieTicket() {
-        super(PRICE);
+    public RegularMovieTicket(boolean isStudentTicket) {
+        super(PRICE, isStudentTicket);
     }
 }
